@@ -57,6 +57,6 @@ SELECT DISTINCT ft.country,
     ABS(total_area_sqkm - T1.world_forest_area_change_sqkm) AS forest_change_vs_country_size_difference
 FROM forestation ft, T1
 ORDER BY forest_change_vs_country_size_difference
-LIMIT 1
+LIMIT 1;
 -- country	total_area_sqkm	forest_change_vs_country_size_difference
 -- Peru	    1279999.9891	44449.0109
