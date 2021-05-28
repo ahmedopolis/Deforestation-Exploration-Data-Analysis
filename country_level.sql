@@ -150,6 +150,6 @@ T3 AS (SELECT T1.country,
 FROM T1, T2
 WHERE (T1.average_percentage_forestation > T2.average_percentage_forestation))
 SELECT COUNT(*) AS count_countries 
-FROM T3
+FROM T3;
 -- count_countries
 -- 95 
