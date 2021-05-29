@@ -93,14 +93,14 @@ SELECT region,
         THEN 'DECREASED' 
         ELSE 'INCREASED'
         END AS region_forest_trend
-FROM T1;
+FROM T1
+WHERE region != 'World';
 -- region	                    percentage_forestation_1990	percentage_forestation_2016	difference_percentage_forestation_1990_vs_2016	region_forest_trend
 -- East Asia & Pacific	        21.64	                    24.93	                    3.29	                                        INCREASED
 -- South Asia	                18.11	                    18.94	                    0.83	                                        INCREASED
 -- Europe & Central Asia	    45.90	                    46.66	                    0.76	                                        INCREASED
 -- North America	            34.34	                    34.96	                    0.62	                                        INCREASED
--- Middle East & North Africa	1.79	                    2.08	                    0.29	                                        INCREASED
--- World	                    32.42	                    31.38	                    -1.04	                                        DECREASED
+-- Middle East & North Africa	1.79	                    2.08	                    0.29	                                        INCREASED                    -1.04	                                        DECREASED
 -- Sub-Saharan Africa	        30.24	                    28.24	                    -2.00	                                        DECREASED
 -- Latin America & Caribbean	49.71	                    45.45	                    -4.26	                                        DECREASED
 

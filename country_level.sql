@@ -21,6 +21,7 @@ SELECT country,
     difference_forest_area_1990_vs_2016_sqkm
 FROM country_level_ft
 WHERE difference_forest_area_1990_vs_2016_sqkm IS NOT NULL
+AND country != 'World'
 ORDER BY difference_forest_area_1990_vs_2016_sqkm DESC
 LIMIT 2;
 -- country	        difference_forest_area_1990_vs_2016_sqkm
@@ -32,6 +33,7 @@ SELECT country,
     percentage_area_1990_vs_2016
 FROM country_level_ft
 WHERE percentage_area_1990_vs_2016 IS NOT NULL
+AND country != 'World'
 ORDER BY percentage_area_1990_vs_2016 DESC
 LIMIT 1;
 -- country	percentage_area_1990_vs_2016
@@ -94,6 +96,11 @@ SELECT percentile_forestation,
 FROM T2
 GROUP BY 1
 ORDER BY countries_per_percentile DESC;
+-- percentile_forestation	countries_per_percentile
+-- FIRST_QUARTILE	        85
+-- SECOND_QUARTILE	        74
+-- THIRD_QUARTILE	        37
+-- FOURTH_QUARTILE	        9
 
 /* List all of the countries that were in the 4th quartile (percent forest > 75%) in 2016.*/
 WITH T1 AS (SELECT country, 
