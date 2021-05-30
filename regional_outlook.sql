@@ -32,7 +32,7 @@ AND region != 'World'
 ORDER BY percentage_forestation DESC
 LIMIT 1;
 -- region	                percentage_forestation
--- Europe & Central Asia	46.66
+-- Europe & Central Asia	46.16
 
 /* Which region had the LOWEST percent forest in 2016? */
 SELECT region,
@@ -43,7 +43,7 @@ AND region != 'World'
 ORDER BY percentage_forestation 
 LIMIT 1;
 -- region	                    percentage_forestation
--- Middle East & North Africa	2.08
+-- Middle East & North Africa	2.07
 
 /* What was the percent forest of the entire world in 1990? */
 SELECT percentage_forestation
@@ -62,7 +62,7 @@ AND region != 'World'
 ORDER BY percentage_forestation DESC
 LIMIT 1;
 -- region	                    percentage_forestation
--- Latin America & Caribbean	49.71
+-- Latin America & Caribbean	51.03
 
 /* Which region had the LOWEST percent forest in 1990? */
 SELECT region,
@@ -73,7 +73,7 @@ AND region != 'World'
 ORDER BY percentage_forestation 
 LIMIT 1;
 -- region	                    percentage_forestation
--- Middle East & North Africa	1.79
+-- Middle East & North Africa	1.78
 
 /* Which regions of the world DECREASED in forest area from 1990 to 2016? */
 With T1 AS (SELECT roft1.region,
@@ -96,12 +96,12 @@ SELECT region,
 FROM T1
 WHERE region != 'World';
 -- region	                    percentage_forestation_1990	percentage_forestation_2016	difference_percentage_forestation_1990_vs_2016	region_forest_trend
--- East Asia & Pacific	        21.64	                    24.93	                    3.29	                                        INCREASED
--- South Asia	                18.11	                    18.94	                    0.83	                                        INCREASED
--- Europe & Central Asia	    45.90	                    46.66	                    0.76	                                        INCREASED
--- North America	            34.34	                    34.96	                    0.62	                                        INCREASED
--- Middle East & North Africa	1.79	                    2.08	                    0.29	                                        INCREASED                    -1.04	                                        DECREASED
--- Sub-Saharan Africa	        30.24	                    28.24	                    -2.00	                                        DECREASED
--- Latin America & Caribbean	49.71	                    45.45	                    -4.26	                                        DECREASED
+-- South Asia	                16.51	                    17.51	                    1.00	                                        INCREASED
+-- Europe & Central Asia	    37.28	                    38.04	                    0.76	                                        INCREASED
+-- East Asia & Pacific	        25.78	                    26.36	                    0.58	                                        INCREASED
+-- North America	            35.65	                    36.04	                    0.39	                                        INCREASED
+-- Middle East & North Africa	1.78	                    2.07	                    0.29	                                        INCREASED
+-- Sub-Saharan Africa	        30.67	                    28.79	                    -1.88	                                        DECREASED
+-- Latin America & Caribbean	51.03	                    46.16	                    -4.87	                                        DECREASED
 
 

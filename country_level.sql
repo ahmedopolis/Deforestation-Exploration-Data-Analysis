@@ -12,7 +12,6 @@ FROM forestation ft1,
 WHERE (ft1.year = '2016' AND ft2.year = '1990')
 AND (ft1.country = ft2.country);
 
-
 /* Check if 'forestation' table exist */
 DROP VIEW IF EXISTS country_level_ft;
 
@@ -98,8 +97,8 @@ GROUP BY 1
 ORDER BY countries_per_percentile DESC;
 -- percentile_forestation	countries_per_percentile
 -- FIRST_QUARTILE	        85
--- SECOND_QUARTILE	        74
--- THIRD_QUARTILE	        37
+-- SECOND_QUARTILE	        73
+-- THIRD_QUARTILE	        38
 -- FOURTH_QUARTILE	        9
 
 /* List all of the countries that were in the 4th quartile (percent forest > 75%) in 2016.*/
@@ -109,6 +108,7 @@ WITH T1 AS (SELECT country,
     ROUND(AVG(percentage_forestation), 2) AS average_percentage_forestation
 FROM forestation
 WHERE (year = '2016' AND percentage_forestation IS NOT NULL)
+AND country != 'World'
 GROUP BY 1, 2, 3
 ),
 T2 AS (SELECT country,
@@ -159,4 +159,4 @@ WHERE (T1.average_percentage_forestation > T2.average_percentage_forestation))
 SELECT COUNT(*) AS count_countries 
 FROM T3;
 -- count_countries
--- 95 
+-- 94 
