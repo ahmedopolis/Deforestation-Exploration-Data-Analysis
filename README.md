@@ -1,6 +1,6 @@
-# Data Exploration of a World Bank Forest Data (1990-2016)
+# Data Exploration of a World Bank Forest Dataset (1990-2016)
 
-The herein repository host the snippets of SQL scripts and a data report for the herein analysis.
+The herein repository host the SQL scripts and a data report ('deforestation-exploration-report.pdf') for the herein analysis.
 
 ## License
 
