@@ -1,8 +1,4 @@
 
-
-/* Initial Setup */
-USE temp;
-
 /* ------------- Part 3 - Country-Level Detail ------------- */
 
 /* Create table for country-level forest area change and percentage comparing 1990 and 2016. */
